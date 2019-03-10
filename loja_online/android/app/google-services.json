@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "920746975286",
+    "firebase_url": "https://loja-online-6b3a7.firebaseio.com",
+    "project_id": "loja-online-6b3a7",
+    "storage_bucket": "loja-online-6b3a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920746975286:android:641924f95b6c4203",
+        "android_client_info": {
+          "package_name": "com.example.loja_online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920746975286-jtqaholg0rvoqg53t9fjsfjcg9241fod.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.loja_online",
+            "certificate_hash": "5fae7df1b27217c9e40f0aae9676dcb3e037ab37"
+          }
+        },
+        {
+          "client_id": "920746975286-7sjv07bo7asq69nven2r4l2un4rq5tgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvwCQdTRcbi0tdvg7VAJD2uV0SjOuPBDk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920746975286-7sjv07bo7asq69nven2r4l2un4rq5tgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
