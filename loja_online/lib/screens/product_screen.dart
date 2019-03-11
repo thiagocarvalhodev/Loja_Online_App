@@ -13,12 +13,15 @@ class ProductScreen extends StatefulWidget {
 }
 
 class _ProductScreenState extends State<ProductScreen> {
+  
   final ProductData productData; // dados do produto selecionado na ProductTiles
   _ProductScreenState(this.productData);
 
   @override
   Widget build(BuildContext context) {
     final primaryColor = Theme.of(context).primaryColor;
+
+    String size; // variavel para comparar com o tamanho atual
 
     return Scaffold(
       appBar: AppBar(
@@ -42,8 +45,85 @@ class _ProductScreenState extends State<ProductScreen> {
               dotSpacing: 15.0,
               dotColor: primaryColor,
               dotBgColor: Colors.purple,
+              indicatorBgPadding: 5.0,
               autoplay: false,
             )
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                // texto título produto
+                Text(productData.title, style: TextStyle(
+                  fontSize: 18.0, fontWeight: FontWeight.bold
+                  ),
+                ),
+                // texto preço produto
+                Text("R\$ ${productData.price.toStringAsFixed(2)}", style:
+                  TextStyle(fontSize: 22.0, color: primaryColor, fontWeight: FontWeight.bold)
+                ,),
+                SizedBox(height: 16.0,),
+                Text("Tamanho"),
+                SizedBox(
+                  height: 34.0,
+                  child: GridView(
+                    padding: EdgeInsets.symmetric(vertical: 4.0),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1,
+                      mainAxisSpacing: 8.0, // espaçamento entre os widgets
+                      childAspectRatio: 0.5 // define o tamanho dos icones (proporção)
+                    ),
+                    scrollDirection: Axis.horizontal,
+                    children: productData.sizes.map(
+                      (sizes){
+                        return GestureDetector(
+                          onTap: (){
+                            setState(() {
+                              size = sizes;
+                            });
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                              border: Border.all(
+                                // se o tamanho atual é igual ao selecionado, a cor será
+                                // a primária, caso contrário, cinza
+                                color: size == sizes ? primaryColor : Colors.grey[500],
+                                width: 3.0
+                              ),
+                            ),
+                            width: 50.0,
+                            alignment: Alignment.center,
+                            child: Text(sizes),
+                          ),
+                        );
+                      }
+                    ).toList(),
+                  ),
+                ),
+                SizedBox(height: 16.0,),
+                // botao
+                SizedBox(
+                  height: 44.0,
+                  child: RaisedButton(
+                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                    color: primaryColor,
+                    child: Text("Entre para comprar", textAlign: TextAlign.center,
+                      style: 
+                        TextStyle(
+                          fontSize: 18.0, 
+                          fontWeight: FontWeight.bold, 
+                          color: Colors.white),
+                        ),
+                    onPressed: (){},
+                  ),
+                ),
+                SizedBox(height: 16.0,),
+                Text("Descrição", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),),
+                Text(productData.description)
+              ],
+            ),
           )
         ],
       ),
