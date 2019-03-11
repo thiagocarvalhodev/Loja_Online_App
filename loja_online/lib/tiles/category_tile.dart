@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:loja_online/screens/category_screen.dart';
 
 class CategoryTile extends StatelessWidget {
-  final DocumentSnapshot snapshot; // documento com icone e title
+  final DocumentSnapshot snapshot; // documento com icone e title: products/category
 
   CategoryTile(this.snapshot); // construtor para obter os documentos
 
@@ -21,7 +22,12 @@ class CategoryTile extends StatelessWidget {
         backgroundImage: NetworkImage(snapshot.data["icon"]),
       ),
       trailing: Icon(Icons.keyboard_arrow_right),
-      onTap: () {},
+      onTap: () {
+        // ao clickar na tile, direcionamos pra página de visualização do produto
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => CategoryScreen(snapshot))
+        );
+      },
     );
   }
 }

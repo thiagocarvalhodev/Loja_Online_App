@@ -25,7 +25,6 @@ class ProductData {
     price =snapshot.data["price"];
     sizes = snapshot.data["sizes"];
     images =snapshot.data["images"];
-
   }
 
 }
