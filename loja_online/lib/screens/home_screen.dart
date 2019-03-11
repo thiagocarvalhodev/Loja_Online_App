@@ -1,9 +1,10 @@
-// Tela inicial do app
+// Tela inicial do app: usada navegar nas páginas do app
 // Usamos o PageView para podermos utilizar o drawer em todas as telas
 // do drawer 
 
 import 'package:flutter/material.dart';
 import 'package:loja_online/tabs/home_tab.dart';
+import 'package:loja_online/widgets/custom_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   final Widget child;
@@ -17,7 +18,10 @@ class HomeScreen extends StatelessWidget {
     return PageView(
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
-        HomeTab(),
+        Scaffold(
+          body: HomeTab(),
+          drawer: CustomDrawer(), // Drawer
+        )
       ],
     );
   }
