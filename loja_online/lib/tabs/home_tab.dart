@@ -1,3 +1,5 @@
+  // Tela de inicio: imagens iniciais, 
+  
   import 'package:flutter/material.dart';
   import 'package:cloud_firestore/cloud_firestore.dart';
   import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -10,7 +12,6 @@
   
     @override
     Widget build(BuildContext context) {
-      
       // Degradê de fundo
       Widget _buildBodyBack() => Container(
         decoration: BoxDecoration(
@@ -24,7 +25,7 @@
           )
         ),
       );
-
+      
       return Stack(
         children: <Widget>[
           _buildBodyBack(),
