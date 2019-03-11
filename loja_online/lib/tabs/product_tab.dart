@@ -22,10 +22,10 @@ class ProductTab extends StatelessWidget {
               (doc){
                 return CategoryTile(doc);
               }
-            ).toList()
-          ).toList();
+            ).toList() // Lista de CategoryTile
+          ).toList(); // Lista de divideTiles
           return ListView(
-            children: dividedTiles,
+            children: dividedTiles, // Lista de dividedTiles
           );
         }
       },  

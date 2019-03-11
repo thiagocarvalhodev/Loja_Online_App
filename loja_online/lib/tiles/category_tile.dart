@@ -11,7 +11,9 @@ class CategoryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(snapshot.data["title"]), // titulo
+      title: Text(snapshot.data["title"],
+        style: TextStyle( fontSize: 18.0, fontWeight: FontWeight.w500,),
+      ), // titulo
       leading: CircleAvatar(
         radius: 25.0,
         backgroundColor: Colors.transparent,
