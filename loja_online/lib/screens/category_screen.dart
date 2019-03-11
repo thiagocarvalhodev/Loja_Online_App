@@ -46,9 +46,17 @@ class CategoryScreen extends StatelessWidget {
                     ),
                     itemCount: snapshot.data.documents.length,
                     itemBuilder: (context, index){
-                      // transformamos os dados do firebase em um objeto do tipo ProductData
                       ProductData productData = ProductData.fromDocument(snapshot.data.documents[index]);
-                      ProductTile("grid", productData);
+                      // transformamos os dados do firebase em um objeto do tipo ProductData
+                      return ProductTile("grid", productData);
+                    },
+                  ),
+                  ListView.builder(
+                    padding: EdgeInsets.all(4.0),
+                    itemCount: snapshot.data.documents.length,
+                    itemBuilder: (context, index){
+                      ProductData productData = ProductData.fromDocument(snapshot.data.documents[index]);
+                      return ProductTile("list", productData);
                     },
                   )
                 ],
