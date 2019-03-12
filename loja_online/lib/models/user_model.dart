@@ -36,8 +36,8 @@ class UserModel extends Model {
   // função que fará o cadastro no app
   // onSucess é responsável pela ação caso o cadastro funcione
   // onFail é responsável pela ação caso o cadastro falhe
-  singUp(Map<String, dynamic> userData, String pass, 
-    VoidCallback onSucess, VoidCallback onFail) {
+  singUp({@required Map<String, dynamic> userData, @required String pass, 
+    @required VoidCallback onSucess, @required VoidCallback onFail}) {
 
     StartLoading(isLoading); // informamos que está carregando
       // criar usuário do firebase com email e senha
