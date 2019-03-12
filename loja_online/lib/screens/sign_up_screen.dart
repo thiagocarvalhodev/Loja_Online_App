@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SingUpScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   final _formKey =GlobalKey<FormState>();
 
   final Widget child;
 
-  SingUpScreen({Key key, this.child}) : super(key: key);
+  SignUpScreen({Key key, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +13,6 @@ class SingUpScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Entrar"),
         centerTitle: true,
-        actions: <Widget>[
-          FlatButton(
-            onPressed: (){},
-            child: Text("CRIAR CONTA", style: TextStyle(
-              color: Colors.white
-            ),),
-          )
-        ],
       ),
       // como iremos usar formulários, colocamos dentro do Form
       body: Form(
@@ -70,6 +62,7 @@ class SingUpScreen extends StatelessWidget {
                   return "Endereço inválido"; 
               },
             ),
+            SizedBox(height: 16.0,),
             SizedBox(
               height: 44.0,
               child: RaisedButton(

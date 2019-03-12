@@ -1,6 +1,7 @@
 // Tela de Login
 
 import 'package:flutter/material.dart';
+import 'package:loja_online/screens/sign_up_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   final Widget child;
@@ -18,7 +19,12 @@ class LoginScreen extends StatelessWidget {
         centerTitle: true,
         actions: <Widget>[
           FlatButton(
-            onPressed: (){},
+            onPressed: (){
+              // usamos o pushReplacement 
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => SignUpScreen())
+              );
+            },
             child: Text("CRIAR CONTA", style: TextStyle(
               color: Colors.white
             ),),
@@ -74,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                 ),),
                 onPressed: (){
                   if(_formKey.currentState.validate()){
-                    
+
                   }
                 },
               ),
